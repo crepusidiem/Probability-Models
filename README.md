@@ -8,7 +8,7 @@ Our agent's Performance Measure is log-likelihood, given that we are building a 
 
 2. What kind of agent is it? Goal based? Utility based? etc.
 
-Our agent will be utility based, as it will seek to optimize a performance metric, as mentioned previously.
+Our agent will be utility based, as it will seek to optimize log-likelihood, as mentioned previously.
 
 3. Describe how your agent is set up and where it fits in probabilistic modeling.
 
