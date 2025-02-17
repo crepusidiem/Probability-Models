@@ -6,12 +6,14 @@ Our project analyzes a bank marketing dataset to predict whether a client will s
 First, we check for missing values in the dataset. Based on our analysis, there are no missing values in any columns. This ensures data completeness and prevents issues with training the model.
 ### 2. Identifying Continuous and Categorical Variables
 We classify features into continuous and discrete (categorical) variables:
-- Continuous Features: age, balance, duration, campaign, pdays, previous
-- Categorical Features: All other non-numeric columns, such as job, marital, education, default, housing, loan, contact, month, poutcome
+- Continuous Features: `age`, `balance`, `duration`, `campaign`, `pdays`, `previous`
+- Categorical Features: All other non-numeric columns, such as `job`, `marital`, `education`, `default`, `housing`, `loan`, `contact`, `month`, `poutcome`
 ### 3. Feature Selection and Discretization
-To improve model performance, we evaluate the uniqueness of values in continuous features. Since balance has a high number of distinct values (more than 5% of the dataset), we apply quantile-based binning to convert it into discrete bins, reducing its complexity while preserving meaningful differences.
-### 4. Data Splitting
-Finally, we split the dataset into training and testing sets using train_test_split to ensure our model generalizes well to unseen data.
+To improve model performance, we evaluate the uniqueness of values in continuous features. Since `balance` has a high number of distinct values (more than 5% of the dataset), we apply quantile-based binning to convert it into discrete bins, reducing its complexity while preserving meaningful differences.
+### 4. One-Hot Encoding for Categorical Features
+Categorical variables like `job`, `marital`, and `education` are transformed using one-hot encoding, converting them into binary columns. For instance, if the job has categories like `admin`, `technician`, and `blue-collar`, we create separate columns (`job_admin`, `job_technician`, `job_blue-collar`) where each row has a 1 in the corresponding job column.
+### 5. Data Splitting
+Finally, we split the dataset into training and testing sets using `train_test_split` to ensure our model generalizes well to unseen data.
 
 This preprocessing pipeline ensures that our data is clean, structured, and suitable for training a Naive Bayes classifier.
 
