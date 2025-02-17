@@ -1,5 +1,5 @@
-# Probability-Models
-This repository implements various probability models with real-world data.
+# Bank Marketing: Probability Models (README.md Explanation)
+## Data Exploration & Preprocessing
 
 ## Milestone 2 Q&A
 1. Explain what your AI agent does in terms of PEAS. What is the "world" like?
