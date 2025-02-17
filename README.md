@@ -1,8 +1,12 @@
 # Bank Marketing: Probability Models (README.md Explanation)
+**Link to Data**:
 
+   - [Bank Marketing dataset on UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/222/bank+marketing)
+
+**Link to the Jupyter Notebook**:
+   - [Jupyter Notebook (Milestone2)](./CSE150A_BankMarketing_ProbModel.ipynb)
+     
 ## Data Exploration & Preprocessing Steps
-Dataset we use: https://archive.ics.uci.edu/dataset/222/bank+marketing
-
 Our project analyzes a bank marketing dataset to predict whether a client will subscribe to a term deposit (y). To achieve this, we preprocess the data in the following ways:
 ### 1. Handling Missing Values
 First, we check for missing values in the dataset. Based on our analysis, there are no missing values in any columns. This ensures data completeness and prevents issues with training the model.
