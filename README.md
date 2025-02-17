@@ -35,4 +35,6 @@ Our first model was relatively successful, earning an accuracy of ~88% on the te
 ![Over/Underfitting Chart](/Under:Overfitting.png)
 
 We also tested the model with the confusion matrix and obtained a general report.
-![Report](
+![Report](GeneralReport.png)
+
+As you can see from the results of this report, we may have a case of a lazy model. You can see the precision on positive labels is only half of the precision on negative labels, and hence we can gather that the model may be defaulting to classifying a case as negative not because it has learned what a negative entry looks like, but because of the sheer number of negative entries that it is almost always a good bet to classify that way. We will seek to ameliorate that in our future models.
