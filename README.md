@@ -33,3 +33,6 @@ Our agent will utilize a Naive-Bayes model to make its predictions. Our reasonin
 Our first model was relatively successful, earning an accuracy of ~88% on the testing data. As for the fit, we can see from the chart below that it looks like a relatively good fit. Unfortunately we had to terminate the validation testing early due to time constraints but we will optimize that process and return with more data. We will continue to tune our parameters and possibly do some feature engineering to improve further.
 
 ![Over/Underfitting Chart](/Under:Overfitting.png)
+
+We also tested the model with the confusion matrix and obtained a general report.
+![Report](
