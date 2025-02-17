@@ -14,6 +14,7 @@ To improve model performance, we evaluate the uniqueness of values in continuous
 Categorical variables like job, marital, and education are transformed using one-hot encoding, converting them into binary columns. For instance, if the job has categories like "admin," "technician," and "blue-collar," we create separate columns (job_admin, job_technician, job_blue-collar) where each row has a 1 in the corresponding job column.
 ### 5. Data Splitting
 Finally, we split the dataset into training and testing sets using train_test_split to ensure our model generalizes well to unseen data.
+
 This preprocessing pipeline ensures that our data is clean, structured, and suitable for training a Naive Bayes classifier.
 
 ## Milestone 2 Q&A
