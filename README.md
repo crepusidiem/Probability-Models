@@ -28,3 +28,8 @@ Our agent will be utility-based, as it will seek to optimize log-likelihood, as 
 
 ### 3. Describe how your agent is set up and where it fits in probabilistic modeling.
 Our agent will utilize a Naive-Bayes model to make its predictions. Our reasoning is as follows: if we take the input feature "campaign" (number of calls during the contract period) as an example, we believe that the causation flows from the output (a successful deposit) to the input (multiple calls made to confirm details and obtain additional information), and not the other way around. Hence, we arrive at a graph structure resembling that of a Naive-Bayes model, where given the output, all of our inputs/features are conditionally independent (i.e. all our features are d-separated via the output). It will optimize itself based on a log-likelihood function, and the results it outputs will be our final prediction on whether or not the customer subscribed.
+
+## Conclusion
+Our first model was relatively successful, earning an accuracy of ~88% on the testing data. As for the fit, we can see from the chart below that it looks like a relatively good fit. Unfortunately we had to terminate the validation testing early due to time constraints but we will optimize that process and return with more data. We will continue to tune our parameters and possibly do some feature engineering to improve further.
+
+![Over/Underfitting Chart](/Under:Overfitting.png)
