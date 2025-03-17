@@ -112,7 +112,8 @@ I will also post relevant figures that I plotted during fine-tuning as below:
 ![](/images/0.15_0.998_0.2.png)
 
 ## Conclusion
-This model was relatively unsuccessful as we can tell from its performance compared against the baseline behavior where we buy in in the very first day of the dataset, and sell out all of them at the end. In most of the epochs, the profit by following the Q learning AI agent is just not as satisfactory as just by following this dumb strategy. This could be attributed to several reasons:
+![](/images/0.15_0.998_0.15optimal.png)
+From the image of the AI agent with the most optimal hyperparameters from the list of hyperparameters, this model was relatively unsuccessful as we can tell from its performance compared against the baseline behavior where we buy in in the very first day of the dataset, and sell out all of them at the end. In most of the epochs, the profit by following the Q learning AI agent is just not as satisfactory as just by following this dumb strategy. This could be attributed to several reasons:
 
 ### Non-Stationarity of the Stock Market
 The stock market is highly non-stationary (price distributions change over time, especially the previous pendemic makes a huge distribution shift to the stock market); however, Q-learning assumes a stationary environment, meaning that the reward function and state transitions remain consistent. However, in stock markets, the price patterns and volatility shift, making past Q-values unreliable. This could lead to instability as shown in the image, where the learned policy works well in some epochs but performs poorly in others, showing trend of osicilation.
