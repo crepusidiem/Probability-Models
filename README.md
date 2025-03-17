@@ -112,11 +112,25 @@ I will also post relevant figures that I plotted during fine-tuning as below:
 ![](/images/0.15_0.998_0.2.png)
 
 ## Conclusion
-Our first model was relatively successful, earning an accuracy of ~88% on the testing data. As for the fit, we can see from the chart below that it looks like a relatively good fit. Unfortunately we had to terminate the validation testing early due to time constraints but we will optimize that process and return with more data. We will continue to tune our parameters and possibly do some feature engineering to improve further.
+This model was relatively unsuccessful as we can tell from its performance compared against the baseline behavior where we buy in in the very first day of the dataset, and sell out all of them at the end. In most of the epochs, the profit by following the Q learning AI agent is just not as satisfactory as just by following this dumb strategy. This could be attributed to several reasons:
 
-![Over/Underfitting Chart](/Under:Overfitting.png)
+### Non-Stationarity of the Stock Market
+The stock market is highly non-stationary (price distributions change over time, especially the previous pendemic makes a huge distribution shift to the stock market); however, Q-learning assumes a stationary environment, meaning that the reward function and state transitions remain consistent. However, in stock markets, the price patterns and volatility shift, making past Q-values unreliable. This could lead to instability as shown in the image, where the learned policy works well in some epochs but performs poorly in others, showing trend of osicilation.
 
-We also tested the model with the confusion matrix and obtained a general report.
-![Report](GeneralReport.png)
+### Q-learning is Sample-Inefficient and Needs a Lot of Training
+Since there is limited time and computation power for me, tabular Q-learning takes a long time to converge as it only counts on random sampling based on the $\epsilon$ greedy exploration. The fact that I only trained it for several hundred of epochs is not sufficient.
 
-As you can see from the results of this report, we may have a case of a lazy model. You can see the precision on positive labels is only half of the precision on negative labels, and hence we can gather that the model may be defaulting to classifying a case as negative not because it has learned what a negative entry looks like, but because of the sheer number of negative entries that it is almost always a good bet to classify that way. We will seek to ameliorate that in our future models.
+### Hyperparameter Sensitive
+Q-learning is sensitive to learning rate and discount factor. If learning rate is too high, the Q-values will fluctuate too much, preventing convergence; if γ is too high, the agent may overestimate future rewards, leading to unstable behavior. While tuning these parameters is crucial for stable learning, the absence of group members makes it impossible to fine tune it to a satisfactory scale.
+
+### Delayed Rewards and Credit Assignment Problem (Advised by ChatGPT)
+
+- In stock trading, rewards are often delayed (profits are realized only after multiple time steps).
+- Q-learning struggles with long-term dependencies, as it updates Q-values based on immediate rewards.
+- If the agent focuses too much on short-term rewards, it may fail to learn a profitable long-term strategy, causing high variance in profits across epochs.
+
+## However, there are ways to improve it
+
+1. With the same dataset, some of the other deep models may be more reliable as it keeps more long-term dependencies, like Deep Q Network (DQN), or even LSTM.
+2. Due to the lack of computation power, I just use pencentiles to divide the close value of Tesla stock to be split into 10 sections; however, if there is a chance to divide into more subparts, then the reward function could be more well-defined, leading to better performances. (Of course, for algorithms that could take continous values for states, this would not be a problem)
+3. To fine tune the hyperparameters and increase the training episodes, which talked above with the cost of time and computation power.
