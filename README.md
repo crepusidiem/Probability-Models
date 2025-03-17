@@ -104,6 +104,8 @@ To learn effectively, the agent uses an **epsilon-greedy strategy**:
 ## Calculating Parameters
 As mentioned above, except for the update rule of Q-table given, there are 3 hyperparameters to tune: the learning rate $\alpha$, discount factor $\gamma$, and the exploration probability $\epsilon$. Since my groupmate drops the class without notifying me, I don't have a ton of time to test the hyperparameter on my own, so I do a small-scale, manual grid-search as shown in the notebook.
 
+I will 
+
 ## Conclusion
 Our first model was relatively successful, earning an accuracy of ~88% on the testing data. As for the fit, we can see from the chart below that it looks like a relatively good fit. Unfortunately we had to terminate the validation testing early due to time constraints but we will optimize that process and return with more data. We will continue to tune our parameters and possibly do some feature engineering to improve further.
 
