@@ -101,6 +101,9 @@ To learn effectively, the agent uses an **epsilon-greedy strategy**:
 - With probability $\epsilon$, the agent picks a random action (exploration).
 - With probability $1 - \epsilon$, the agent picks the action with the highest Q-value (exploitation).
 
+### Developing Optimal Policy
+The action to take at state $s$, as coordinated by the optimal policy $\pi$, is just $\pi(s) = arg\max_a Q(s, a)$.
+
 ## Calculating Parameters
 As mentioned above, except for the update rule of Q-table given, there are 3 hyperparameters to tune: the learning rate $\alpha$, discount factor $\gamma$, and the exploration probability $\epsilon$. Since my groupmate drops the class without notifying me, I don't have a ton of time to test the hyperparameter on my own, so I do a small-scale, manual grid-search as shown in the notebook.
 
